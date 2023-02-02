@@ -15,10 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.addImageBtn.setOnClickListener {
-
             val bottomSheet = BottomSheetFragment(binding.image)
             bottomSheet.show(supportFragmentManager, "TAG")
-
         }
     }
 
