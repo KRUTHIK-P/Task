@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:background="@drawable/bottom_sheet_background"
-    tools:context=".BottomSheetFragment">
+    tools:context=".fragments.BottomSheetFragment">
 
     <LinearLayout
         android:id="@+id/camera_lyt"
@@ -24,13 +24,14 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_baseline_camera_enhance_24" />
+                android:src="@drawable/ic_baseline_camera_enhance_24"
+                android:contentDescription="@string/todo" />
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Camera"
+            android:text="@string/camera"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"/>
     </LinearLayout>
@@ -51,13 +52,14 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_baseline_insert_photo_24" />
+                android:src="@drawable/ic_baseline_insert_photo_24"
+                android:contentDescription="@string/todo" />
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gallery"
+            android:text="@string/gallery"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"/>
     </LinearLayout>
