@@ -1,11 +1,15 @@
-package com.example.bottomsheet
+package com.example.bottomsheet.activity
 
+import android.graphics.Bitmap
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bottomsheet.fragments.BottomSheetFragment
+import com.example.bottomsheet.interfaces.Communicator
 import com.example.bottomsheet.databinding.ActivityMainBinding
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Communicator {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,9 +19,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.addImageBtn.setOnClickListener {
-            val bottomSheet = BottomSheetFragment(binding.image)
+            val bottomSheet = BottomSheetFragment()
             bottomSheet.show(supportFragmentManager, "TAG")
         }
+    }
+
+    override fun capturedImage(image: Bitmap) {
+        binding.image.setImageBitmap(image)
+    }
+
+    override fun selectedImage(image: Uri) {
+        binding.image.setImageURI(image)
     }
 
 
